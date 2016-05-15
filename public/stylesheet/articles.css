@@ -1,0 +1,200 @@
+#fc_list_articles{
+    min-height: 500px;
+}
+#left_content, #right_content{
+    border-right: 1px solid #ccc;
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+}
+#left_content{width: 75%;}
+#right_content{width: 25%;}
+
+#hot_articles{
+    height: 500px;
+}
+#hot_articles .main-news, #hot_articles .main-news .inner, 
+#hot_articles .sub-news{
+    height: 100%;
+}
+#hot_articles .main-news .thumbnail-main{
+    height: 80%;
+    overflow: hidden;
+}
+#hot_articles .main-news .content-main-news{
+    height: 20%;
+}
+#hot_articles .sub-news .fc-row{
+    height: 25%;
+}
+.content-main-news .title-news, .content-main-news .desc-news, .content-main-news .infor-news{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+.content-main-news .title-news, .content-main-news .infor-news{
+    height: 30%;
+}
+.content-main-news .desc-news{
+    height: 40%;
+}
+
+.section-articles{
+    margin-top: 30px;
+    padding: 0 10px;
+    font-size: 1.3em;
+}
+.section-articles .cate-article{
+    margin-top: 20px;
+}
+.section-articles .title-cate {
+    font-size: 2em;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+.section-articles .title-cate  a{
+     color: #9c1737;
+}
+.section-articles .c-title-article {
+    font-size: 1.5em;
+    padding: 5px 0;
+}
+.section-articles .c-title-article > a {
+    color: #0e3a5f;
+}
+.cate-article  .c-desc-article {
+    padding: 5px 0;
+    width: 100%;
+    font-size: 1.1em;
+    text-align: justify;
+}
+.cate-article .c-infor-article {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+.cate-article .c-author, .cate-article .c-date-create, .cate-article .c-tags  {
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    padding: 5px 0;
+}
+.cate-article .c-author{
+    width: 10%;
+}
+.cate-article .c-date-create {
+    width: 30%;
+}
+.cate-article .c-tags {
+    width: 60%;
+}
+.loading-more {
+    padding: 10px 0;
+    text-align: center;
+}
+.loading-more a{
+    padding: 3px 0;
+    border-bottom: 1px solid #333;
+}
+/*-------RIGHT CONTENT------------*/
+.section-right{
+    margin-top: 20px;
+}
+.list-title-section {
+    font-size: 1.5em;
+    padding: 10px 0;
+    text-align: center;
+}
+.ever-section {
+    font-size: 1.2em;
+    padding: 5px;
+}
+.ad{padding: 0 5px;}
+.ad.section-right a, .ad.section-right a img{
+    width: 100%;
+}
+/*------------DETAIL-----------------*/
+#section_detail{
+    margin: 30px 0;
+    font-size: 1.4em;
+}
+.dt-title-article {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.dt-categori {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.dt-infor-article {
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    font-size: 0.7em;
+}
+.dt-author, .dt-date-created, .dt-tags{
+    background: #f7f7f7 none repeat scroll 0 0;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    vertical-align: top;
+}
+.dt-author {
+    border-right: 1px solid #ccc;
+    width: 10%;
+}
+.dt-date-created {
+    width: 20%;
+    border-right: 1px solid #ccc; 
+}
+.dt-tags {
+    width: 70%;
+}
+.dt-main-content{
+    margin-top: 30px;
+}
+.dt-description{
+    padding: 10px;
+    background: #ccc;
+}
+.dt-content {
+    margin-top: 30px;
+    padding: 10px;
+}
+.dt-share{
+    text-align: right;
+}
+.dt-share .share{
+    display: inline-block;
+    vertical-align: top;
+    width: 7%;
+}
+.dt-share .share a{
+    display: inline-block;
+    vertical-align: top;
+    background: #00c8d2;
+    padding: 5px 10px;
+    transition: all ease-in 0.2s;
+    width: 100%;
+    text-align: center;
+}
+.dt-share .share.fb a:hover{
+    background: #3b5998;
+    color: #fff;
+}
+.dt-share .share.tw a:hover{
+    background: #00aced;
+     color: #fff;
+}
+.dt-share .share.gg a:hover{
+    background: #dd4b39;
+     color: #fff;
+}
+.dt-text-content{
+    margin-top: 10px;
+}

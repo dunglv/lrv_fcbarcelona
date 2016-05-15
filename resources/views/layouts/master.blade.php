@@ -1,0 +1,10 @@
+@include('partials.header')
+<header>
+   @include('partials.navtop')
+   @include('partials.matches')
+</header>
+<main>
+    @include('partials.slider')
+    @yield('content')
+</main>
+@include('partials.footer')
