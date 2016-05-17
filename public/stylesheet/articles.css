@@ -198,3 +198,70 @@
 .dt-text-content{
     margin-top: 10px;
 }
+
+/*<--------------------------INDEX ARTICLE------------------------------>*/
+.articles{
+    display: table;
+    clear: both;
+    width: 100%;
+    margin-top: 30px;
+}
+.articles .tit-article .create-time, .tit{
+    float: left;
+}
+.articles .tit-article .create-time{width: 10%;}
+.articles .tit-article .tit{width: 90%;}
+.articles .tit-article{
+    display: table;
+    width: 100%;
+    background: #ddd;
+    padding: 5px;
+}
+.articles .tit-article .create-time{
+    font-size: 1.3em;
+    width: 10%;
+}
+.articles .tit-article .d-tit{
+    padding: 5px 7px;
+    text-align: center;
+    border-bottom: 1px solid #020415;
+}
+.articles .tit-article .y-tit{
+    padding: 5px 10px;
+    text-align: center;
+}
+.articles .tit-article .tit a{
+    color: #051E3D;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0 5px;
+    display: table;
+}
+.articles .overview{
+    width: 100%;
+    display: table;
+    background: #E6E6E6;
+    margin-top: 5px;
+}
+.articles .overview .thumb{
+    width: 20%;
+    float: left;
+}
+.articles .overview .thumb img{
+    width: 100%;
+    max-width: 100%;
+}
+.articles .overview .extract{
+    float: left;
+    width: 80%;
+    padding: 5px;
+}
+.articles .overview .infor{
+    padding: 5px;
+}
+.articles .overview .cate-cp, .articles .overview .tags-cp{
+    float: left;
+    font-weight: bold;
+    width: 50%;
+    padding: 5px;
+}

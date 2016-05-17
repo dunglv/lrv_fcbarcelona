@@ -4,7 +4,7 @@
 <section id="fc_news">
     <div class="inner">
         <div class="title-section">
-            <a href="{{ URL::to('list-all-article') }}">NEWS</a>
+            <a href="{{ route('articles.index') }}">NEWS</a>
         </div>
         <div class="content-section">
             <div class="latest-news">

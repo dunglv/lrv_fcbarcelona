@@ -1,6 +1,6 @@
 @extends ('layouts.master')
 @section ('title', 'List all articles')
-@section ('partial_style')
+@section ('style')
     {!! HTML::style('stylesheet/articles.css') !!}
 @stop
 
@@ -105,32 +105,48 @@
                                </div>
                            </div> <!-- end fc-row -->
                        </div>
-                   </div>
-                  <!--  @foreach($list_cate as $c)
-                    <div class="section-articles">
-                       <div class="title-cate">
-                           <a href="{{ URL::to('categories/'.$c->catename.$c->id) }}">{{ $c->catename }}</a>
-                       </div> -->
-                        @foreach($articles as $a)
-                           <div class="cate-article">
-                               <div class="c-title-article">
-                                   <a href="{{ URL::to($a->alias.'.'.$a->id) }}">{{ $a->title }}</a>
+                   </div> <!-- end latest news -->
+                   <div class="list-news">
+                    @foreach($articles as $a)
+                       <div class="articles item">
+                           <div class="tit-article">
+                               <div class="create-time">
+                                   <div class="d-tit">
+                                       30.4
+                                   </div>
+                                   <div class="y-tit">
+                                       2016
+                                   </div>
                                </div>
-                               <div class="c-desc-article">
-                                    {{ $a->description }}
-                               </div>
-                               <div class="c-infor-article">
-                                   <div class="c-author"><a href="">{{ $a->id_user }}</a></div>
-                                   <div class="c-date-create"><a href="">{{ $a->date_created }}</a></div>
-                                   <div class="c-tags"><a href="">{{ $a->tags }}</a></div>
+                               <div class="tit">
+                                   <a href="{{ URL::to($a->alias.'-'.$a->id) }}">{{ $a->title }}</a>
                                </div>
                            </div>
+                           <div class="overview">
+                               <div class="thumb">
+                                   {!! HTML::image('/images/uploads/noucamp.jpg', 'Noucamp studium', ['class'=>'medium-img']) !!}
+                               </div>
+                                <div class="right extract">
+                                    <div class="excerpt">
+                                        {{ $a->description }}
+                                    </div>
+                                    <div class="infor">
+                                        <div class="cate-cp">
+                                            <span>In:</span><a href="{{ URL::to('/category/'.$a->article_category->catename.'-'.$a->article_category->id) }}">{{ $a->article_category->catename }}</a>
+                                        </div>
+                                        <div class="tags-cp">
+                                            <span>Tags:</span><a href="#">noucamp</a>, <a href="#">barcelona</a>, <a href="#">football</a>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                       </div> <!-- end article -->
                         @endforeach
-                       <div class="loading-more"><a href="">See all post</a></div>
-                   <!-- </div>
-                   @endforeach -->
+                   </div>
+                   <div class="loading-more"><a href="">See all post</a></div>
                </div>
            </div> <!-- end left content-->
+           {{--
            <div id="right_content">
                <div class="hot section-right">
                    <div class="list-title-section">HOT ARTICLES</div>
@@ -153,6 +169,7 @@
                    <a href="">{!! HTML::image('images/ads/ads_01.jpg', 'Lorem ipsum dolor.') !!}</a>
                </div>
            </div>
+           --}}
         </div>
     </section>
 @stop 

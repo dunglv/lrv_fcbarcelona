@@ -18,29 +18,29 @@
 Route::get('/',  'MainController@index');
 
 Route::get('list-articles', [
-        'as' => 'article.index',
+        'as' => 'articles.index',
         'uses' => 'ArticlesController@index'
     ]);
-Route::get('{slug}-{id}', [
-    'as' => 'article.detail',
-    'uses' => 'ArticlesController@detail'
-    ]);
-Route::get('list-categories', [
-    'as' => 'category.index',
-    'uses' => 'CategoriesControlle@index'
-    ]);
-Route::get('category/{slug}-{id}', [
-    'as' => 'category.detail',
-    'uses' => 'ArticlesController@detail'
-    ]);
-Route::get('list-members', [
-    'as' => 'member.index',
-    'uses' => 'MembersController@index'
-    ]);
-Route::get('member/{member}-{id}', [
-    'as' => 'member.detail',
-    'uses' => 'MembersController@detail'
-    ]);
+// Route::get('{slug}-{id}', [
+//     'as' => 'article.detail',
+//     'uses' => 'ArticlesController@detail'
+//     ]);
+// Route::get('list-categories', [
+//     'as' => 'category.index',
+//     'uses' => 'CategoriesControlle@index'
+//     ]);
+// Route::get('category/{slug}-{id}', [
+//     'as' => 'category.detail',
+//     'uses' => 'ArticlesController@detail'
+//     ]);
+// Route::get('list-members', [
+//     'as' => 'member.index',
+//     'uses' => 'MembersController@index'
+//     ]);
+// Route::get('member/{member}-{id}', [
+//     'as' => 'member.detail',
+//     'uses' => 'MembersController@detail'
+//     ]);
 
 // App::down('ArticlesController@list_in_cate');
 /*
