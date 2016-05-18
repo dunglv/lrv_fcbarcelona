@@ -9,7 +9,7 @@
         <div class="inner">
            <div id="left_content">
                 <div class="title-section">
-                   <a href="{{ URL::to('list-article') }}">NEWS</a>
+                   <a href="{{ route('articles.index') }}">NEWS</a>
                </div>
                <div class="content-section">
                    <div id="hot_articles" class="latest-news">
@@ -119,7 +119,7 @@
                                    </div>
                                </div>
                                <div class="tit">
-                                   <a href="{{ URL::to($a->alias.'-'.$a->id) }}">{{ $a->title }}</a>
+                                   <a href="{{ URL::to($a->alias.'.'.$a->id) }}">{{ $a->title }}</a>
                                </div>
                            </div>
                            <div class="overview">

@@ -16,20 +16,25 @@
 //         This is section route to controll user access website                 //
 //===============================================================================//
 Route::get('/',  'MainController@index');
-
+Route::get('{slug}.{id}', [
+    'as' => 'article.detail',
+    'uses' => 'ArticlesController@detail'
+    ]);
 Route::get('list-articles', [
         'as' => 'articles.index',
         'uses' => 'ArticlesController@index'
     ]);
-// Route::get('{slug}-{id}', [
-//     'as' => 'article.detail',
-//     'uses' => 'ArticlesController@detail'
-//     ]);
+Route::get('/member/{member}', function($member){
+	return 'Member is '.$member;
+});
+Route::get('/category/{slug}.{id}', function($slug, $id){
+	return  'Category is '.$slug.' have id '.$id;
+});
 // Route::get('list-categories', [
 //     'as' => 'category.index',
 //     'uses' => 'CategoriesControlle@index'
 //     ]);
-// Route::get('category/{slug}-{id}', [
+// Route::get('/category/{slug}-{id}', [
 //     'as' => 'category.detail',
 //     'uses' => 'ArticlesController@detail'
 //     ]);
@@ -37,7 +42,7 @@ Route::get('list-articles', [
 //     'as' => 'member.index',
 //     'uses' => 'MembersController@index'
 //     ]);
-// Route::get('member/{member}-{id}', [
+// Route::get('{member}', [
 //     'as' => 'member.detail',
 //     'uses' => 'MembersController@detail'
 //     ]);

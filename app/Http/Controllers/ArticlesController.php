@@ -19,23 +19,27 @@ class ArticlesController extends Controller
         return view('articles.index', compact('articles'));
     }
 
-    // public function detail($alias, $id){
-    //     $article  = Articles::with('categories')->with('user')->where(array('fc_articles.id' => $id, 'alias'=> $alias))->get();
-    //     // echo "<pre>";
-    //     //          // print_r($article);
-    //     //          // exit();
+    public function detail($alias, $id){
+        $article  = Article::with('article_category')
+                            ->with('article_member')
+                            ->where(['fc_articles.id' => $id, 'fc_articles.alias'=> $alias, 'fc_articles.status'=>0])
+                            ->get();
+        // $article = Article::find($id);
+        // echo "<pre>";
+        //          print_r($article);
+        //     //      // exit();
 
-    //     //     foreach ($article as  $key) {
-    //     //         // print_r($key->categories);
-    //     //         // foreach ($key->categories as  $value) {
-    //     //          print_r($key->user);
+        //     // foreach ($article as  $key) {
+        //     //     // print_r($key->categories);
+        //     //     // foreach ($key->categories as  $value) {
+        //     //      print_r($key->user);
                     
-    //     //         // }
-    //     //     }
-    //     // echo "</pre>";
-    //     // exit();
-    //     return view('articles.detail', compact($article, 'article'));
-    // }
+        //     //     // }
+        //     // }
+        // echo "</pre>";
+        // exit();
+        return view('articles.detail', compact($article, 'article'));
+    }
     // public function list_in_cate($alias ='', $id='')
     // {
     //     $list_in_cate = CategoriesModel::with('articles_this')->where('id', $id)->get();

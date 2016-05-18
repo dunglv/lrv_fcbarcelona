@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $table = 'fc_articles';
-    protected $timestamp = false;
+    // protected $timestamp = false;
     protected $guarded = array();
 
     public function article_category()
@@ -17,6 +17,6 @@ class Article extends Model
 
     public function article_member()
     {
-        return $this->belongsTo('App\Member', 'id_mem');
+        return $this->belongsTo('App\Member', 'id_user');
     }
 }

@@ -11,11 +11,11 @@
                 <h1>{{ $a->title }}</h1>
             </div>
             <div class="dt-categori">
-                In category: <strong><a href="{{ URL::to('categories/'.$a->categories->catename.$a->categories->id.'.html') }}">{{ $a->categories->catename }}</a></strong>
+                In category: <strong><a href="{{ URL::to('category/'.$a->article_category->catename.'.'.$a->article_category->id) }}">{{ $a->article_category->catename }}</a></strong>
             </div>
             <div class="dt-infor-article">
                 <div class="dt-author">
-                    <a href="">{{ $a->user->username }}</a>
+                    <a href="{{ URL::to('member/'.$a->article_member->username) }}">User: {{ $a->article_member->username }}</a>
                 </div>
                 <div class="dt-date-created">
                     {{ $a->date_created }}
