@@ -18,6 +18,7 @@ class CreateFcMatchesTable extends Migration
             $table->string('stadium', 100);
             $table->text('description');
             $table->datetime('datetime_start');
+            $table->string('flag')->default('this.jpg');
             $table->integer('home')->default(0);
             $table->string('league', 100);
             $table->integer('status')->default(0);

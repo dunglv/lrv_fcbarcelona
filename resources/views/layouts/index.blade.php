@@ -1,6 +1,7 @@
 @extends ('layouts.master')
 @section ('title', 'Trang chủ FC Barcelona')
 @section ('content')
+@include('partials.slider')
 <section id="fc_news">
     <div class="inner">
         <div class="title-section">

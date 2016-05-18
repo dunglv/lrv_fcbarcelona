@@ -1,5 +1,5 @@
 <?php
-
+use App\Article;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -24,6 +24,10 @@ Route::get('list-articles', [
         'as' => 'articles.index',
         'uses' => 'ArticlesController@index'
     ]);
+Route::get('/error_404', function(){
+	$articles = Article::orderBy(DB::raw('RAND()'))->take(2)->get();
+	return view('errors.404', compact('articles'));
+});
 Route::get('/member/{member}', function($member){
 	return 'Member is '.$member;
 });

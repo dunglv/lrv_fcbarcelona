@@ -1,9 +1,14 @@
+<?php 
+use App\Match;
+$matches = Match::orderBy(DB::raw('RAND()'))->take(1)->get();
 
+ ?>
+@foreach ($matches as $m)
 <div id="matches">
     <div class="inner">
         <div class="infor-match">
-            <div class="league">Lorem ipsum dolor sit.</div>
-            <div class="time">04:30 12/02/2015</div>
+            <div class="league">{{ $m->league }}</div>
+            <div class="time">{{ $m->datetime_start }}</div>
         </div>
         <div class="team">
             <div class="t-left">
@@ -11,15 +16,16 @@
                     {!! HTML::image('images/site/fc-icon.png', 'Lorem ipsum dolor sit.') !!}
                     <span>FC BARCALONA</span>
                 </div>
-                <div class="score">0</div>
+                <div class="score">?</div>
             </div>
             <div class="t-right">
-                <div class="score">0</div>
+                <div class="score">?</div>
                 <div class="team-inf _ver">
-                    <span>FC REALMARID</span>
+                    <span>FC {{ $m->team }}</span>
                     {!! HTML::image('images/matches/realmarid.png', 'Lorem ipsum dolor sit.') !!}
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endforeach

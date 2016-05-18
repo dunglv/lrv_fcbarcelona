@@ -20,25 +20,20 @@ class ArticlesController extends Controller
     }
 
     public function detail($alias, $id){
-        $article  = Article::with('article_category')
-                            ->with('article_member')
-                            ->where(['fc_articles.id' => $id, 'fc_articles.alias'=> $alias, 'fc_articles.status'=>0])
-                            ->get();
-        // $article = Article::find($id);
-        // echo "<pre>";
-        //          print_r($article);
-        //     //      // exit();
-
-        //     // foreach ($article as  $key) {
-        //     //     // print_r($key->categories);
-        //     //     // foreach ($key->categories as  $value) {
-        //     //      print_r($key->user);
-                    
-        //     //     // }
-        //     // }
-        // echo "</pre>";
-        // exit();
-        return view('articles.detail', compact($article, 'article'));
+        if(Article::where(['alias'=>$alias, 'id'=>$id])->count()<=0){
+            return redirect('/error_404');
+        }else{
+            $article  = Article::with('article_category')
+                                ->with('article_member')
+                                ->where(['fc_articles.id' => $id, 'fc_articles.alias'=> $alias, 'fc_articles.status'=>0])
+                                ->get();
+            $same_articles = Article::where(['id_cate'=>$article[0]->id_cate])
+                                        ->where('id','!=', $article[0]->id)
+                                        ->take(2)
+                                        ->get();
+            return view('articles.detail')->with(['article'=>$article, 'same_articles'=>$same_articles]);
+        
+        }
     }
     // public function list_in_cate($alias ='', $id='')
     // {

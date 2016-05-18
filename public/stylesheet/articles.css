@@ -123,6 +123,7 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding: 10px;
+    color: #001A75;
 }
 .dt-categori {
     background: #f7f7f7 none repeat scroll 0 0;
@@ -137,24 +138,23 @@
     width: 100%;
     font-size: 0.7em;
 }
-.dt-author, .dt-date-created, .dt-tags{
+.dt-author, .dt-date-created{
     background: #f7f7f7 none repeat scroll 0 0;
     display: inline-block;
     float: left;
     padding: 10px;
     vertical-align: top;
 }
+.dt-author .fa, .dt-date-created .fa{
+    padding: 5px;
+}
 .dt-author {
     border-right: 1px solid #ccc;
-    width: 10%;
 }
 .dt-date-created {
-    width: 20%;
     border-right: 1px solid #ccc; 
 }
-.dt-tags {
-    width: 70%;
-}
+
 .dt-main-content{
     margin-top: 30px;
 }
@@ -177,11 +177,12 @@
 .dt-share .share a{
     display: inline-block;
     vertical-align: top;
-    background: #00c8d2;
+    background: #001A75;
     padding: 5px 10px;
     transition: all ease-in 0.2s;
     width: 100%;
     text-align: center;
+    color: #fff;
 }
 .dt-share .share.fb a:hover{
     background: #3b5998;
@@ -198,7 +199,22 @@
 .dt-text-content{
     margin-top: 10px;
 }
-
+.dt-text-content img{
+    max-width: 100%;
+    text-align: center;
+}
+.dt-tags {
+    width: 100%;
+    padding: 10px;
+    font-style: italic;
+    background: #ddd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.dt-same{
+    margin-top: 30px;
+    clear: both;
+}
 /*<--------------------------INDEX ARTICLE------------------------------>*/
 .articles{
     display: table;
@@ -265,3 +281,5 @@
     width: 50%;
     padding: 5px;
 }
+
+/*<------------------DEATIL ARTICLE--------------------------->*/
