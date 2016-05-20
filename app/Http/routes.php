@@ -20,7 +20,7 @@ Route::get('{slug}.{id}', [
     'as' => 'article.detail',
     'uses' => 'ArticlesController@detail'
     ]);
-Route::get('list-articles', [
+Route::get('/list-articles', [
         'as' => 'articles.index',
         'uses' => 'ArticlesController@index'
     ]);

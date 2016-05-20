@@ -137,6 +137,7 @@
     vertical-align: top;
     width: 100%;
     font-size: 0.7em;
+    background: #F7F7F7;
 }
 .dt-author, .dt-date-created{
     background: #f7f7f7 none repeat scroll 0 0;

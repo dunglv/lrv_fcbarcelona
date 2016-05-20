@@ -16,11 +16,11 @@ class MatchesTableSeeder extends Seeder
            Match::create([
                 'team' =>$faker->sentence,
                 'stadium' =>$faker->sentence,
-                'description' => implode('', $faker->sentences(4)),
-                'datetime_start' => $faker->dateTimeThisYear($max = 'now'),
+                'description' => implode('', $faker->sentences(10)),
+                'datetime_start' => $faker->dateTimeThisYear($min = 'now'),
                 'home' => $faker->numberBetween(0,1),
-                'league' =>$faker->sentence,
-                'status'=> 0,
+                'league' => $faker->sentence,
+                'status'=> 0
             ]);
         }
     }

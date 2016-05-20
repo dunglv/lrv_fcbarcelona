@@ -10,6 +10,12 @@ use Event;
 use DB;
 class ArticlesController extends Controller
 {
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    //     $matches = Match::orderBy(DB::raw('RAND()'))->take(1)->get();
+    //     return view('layouts.index', compact('matches'));
+    // }
     public function index()
     {
     $articles = Article::with('article_category')
@@ -31,6 +37,7 @@ class ArticlesController extends Controller
                                         ->where('id','!=', $article[0]->id)
                                         ->take(2)
                                         ->get();
+   
             return view('articles.detail')->with(['article'=>$article, 'same_articles'=>$same_articles]);
         
         }

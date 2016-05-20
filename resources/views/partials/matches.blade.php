@@ -1,8 +1,3 @@
-<?php 
-use App\Match;
-$matches = Match::orderBy(DB::raw('RAND()'))->take(1)->get();
-
- ?>
 @foreach ($matches as $m)
 <div id="matches">
     <div class="inner">
