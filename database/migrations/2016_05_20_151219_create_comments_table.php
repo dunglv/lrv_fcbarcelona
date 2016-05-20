@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSliderTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateSliderTable extends Migration
      */
     public function up()
     {
-        Schema::create('fc_slider', function (Blueprint $table) {
+        Schema::create('fc_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slide_name', 100);
-            $table->integer('layer')->default(0);
-            $table->text('slide');
+            $table->integer('id_user');
+            $table->integer('id_article');
+            $table->datetime('date_time');
+            $table->text('content');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSliderTable extends Migration
      */
     public function down()
     {
-        Schema::drop('fc_slider');
+        Schema::drop('fc_comments');
     }
 }

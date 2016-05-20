@@ -216,6 +216,57 @@
     margin-top: 30px;
     clear: both;
 }
+/*------Comments-------*/
+.dt-comment{
+    padding: 0;
+    margin: 30px 0;
+}
+.dt-comment .dt-title-comment{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #001A75;
+    padding: 10px;
+}
+.dt-comment ul.list-main-comment{
+    margin: 0;
+    padding: 0 10px;
+}
+.dt-comment .comment{
+    display: table;
+    list-style: none;
+    border: 1px solid #ccc;
+    width: 100%;
+    background: #fefefe;
+    margin-bottom: 30px;
+    font-size: 0.8em;
+}
+.dt-comment .comment .top-comment{
+    padding: 5px 10px;
+    background: #001A75;
+    color: #fff;
+    display: table;
+    width: 100%;
+    font-size: 0.8em;
+    text-align: right;
+}
+.dt-comment .comment .content-comment{
+    display: table;
+    padding: 10px;
+    width: 100%;
+}
+.dt-comment .comment .left-cmt.user-cmt{
+    float: left;
+    font-style: italic;
+}
+.dt-comment .comment .left-cmt.user-cmt a{
+    color: #001A75;
+    font-weight: bold;
+}
+.dt-comment .comment .right-cmt.txt-cmt{
+    float: left;
+    padding-left: 10px;
+    color: #777;
+}
 /*<--------------------------INDEX ARTICLE------------------------------>*/
 .articles{
     display: table;

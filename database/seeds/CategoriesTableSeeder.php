@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\CategoriesModel;
+use App\Category;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -32,7 +32,7 @@ class CategoriesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for( $i = 0; $i < 10; $i++){
-            CategoriesModel::create([
+            Category::create([
                 'catename' => $faker->sentence,
                 'alias' => $this->alias($faker->sentence),
                 'description' => $faker->sentence,

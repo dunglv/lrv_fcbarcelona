@@ -47,6 +47,32 @@
                       </ul>
                   </div>
                   @endif
+                  <div class="dt-comment">
+                      <div class="dt-title-comment">Comments ({{ count($comments) }})</div>
+                      @if(count($comments) > 0)
+                      <ul class="list-main-comment">
+                          @foreach($comments as $c)
+                              <li id="a_{{$a->id}}_cmt_{{$c->id}}" class="comment comment-{{$c->id}}">
+                                  <div class="top-comment">
+                                      <span>{{ $c->date_time }}</span>
+                                  </div>
+                                  <div class="content-comment">
+                                      <div class="left-cmt user-cmt">
+                                          <a href="{{ URL::to('/member/'.$c->member->username) }}">{{ $c->member->username }}</a> says:
+                                      </div>
+                                      <div class="right-cmt txt-cmt">
+                                          {{ $c->content }}
+                                      </div>
+                                  </div>
+                              </li>
+                          @endforeach
+                      </ul>
+                      @else
+                        <div class="alert-comment">
+                            Leave a comment
+                        </div>
+                      @endif
+                  </div>
              </div>
           </div>
       @endforeach

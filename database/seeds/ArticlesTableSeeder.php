@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Articles;
+use App\Article;
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -31,7 +31,7 @@ class ArticlesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 10; $i++) {
-           Articles::create([
+           Article::create([
                 'id_cate' =>$faker->numberBetween(1,10),
                 'id_user' =>$faker->numberBetween(1,10),
                 'title' => $faker->sentence,

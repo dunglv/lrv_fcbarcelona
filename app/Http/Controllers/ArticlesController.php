@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Category;
 use App\Article;
+use App\Comment;
 use Event;
 use DB;
 class ArticlesController extends Controller
@@ -31,14 +32,15 @@ class ArticlesController extends Controller
         }else{
             $article  = Article::with('article_category')
                                 ->with('article_member')
+                                ->with('comments')
                                 ->where(['fc_articles.id' => $id, 'fc_articles.alias'=> $alias, 'fc_articles.status'=>0])
                                 ->get();
             $same_articles = Article::where(['id_cate'=>$article[0]->id_cate])
                                         ->where('id','!=', $article[0]->id)
                                         ->take(2)
                                         ->get();
-   
-            return view('articles.detail')->with(['article'=>$article, 'same_articles'=>$same_articles]);
+            $comments = Comment::with(['article', 'member'])->orderBy('date_time','DESC')->where('id_article', $id)->get();
+            return view('articles.detail')->with(['article'=>$article, 'same_articles'=>$same_articles, 'comments' => $comments]);
         
         }
     }

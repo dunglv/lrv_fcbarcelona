@@ -14,4 +14,10 @@ class Member extends Model
     {
         return $this->hasMany('App\Article', 'id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comments', 'id_user');
+    }
+
 }
