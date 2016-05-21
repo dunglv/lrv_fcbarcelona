@@ -15,24 +15,31 @@ use App\Article;
 //++++++++++++++++++++++++ F R O N T E N D ++++++++++++++++++++++++++++++++++++++//
 //         This is section route to controll user access website                 //
 //===============================================================================//
-Route::get('/',  'MainController@index');
-Route::get('{slug}.{id}', [
-    'as' => 'article.detail',
-    'uses' => 'ArticlesController@detail'
-    ]);
-Route::get('/list-articles', [
-        'as' => 'articles.index',
-        'uses' => 'ArticlesController@index'
-    ]);
-Route::get('/error_404', function(){
-	$articles = Article::orderBy(DB::raw('RAND()'))->take(2)->get();
-	return view('errors.404', compact('articles'));
-});
-Route::get('/member/{member}', function($member){
-	return 'Member is '.$member;
-});
-Route::get('/category/{slug}.{id}', function($slug, $id){
-	return  'Category is '.$slug.' have id '.$id;
+Route::group(['middleware' => 'web'], function() {
+
+    Route::get('/',  'MainController@index');
+    Route::get('{slug}.{id}', [
+        'as' => 'article.detail',
+        'uses' => 'ArticlesController@detail'
+        ]);
+    Route::get('/list-articles', [
+            'as' => 'article.index',
+            'uses' => 'ArticlesController@index'
+        ]);
+    Route::get('/error_404', function(){
+    	$articles = Article::orderBy(DB::raw('RAND()'))->take(2)->get();
+    	return view('errors.404', compact('articles'));
+    });
+    Route::get('/member/{member}', function($member){
+    	return 'Member is '.$member;
+    });
+    Route::get('/category/{slug}.{id}', function($slug, $id){
+    	return  'Category is '.$slug.' have id '.$id;
+    });
+    Route::post('{slug}.{id}', [
+        'as' => 'comment.store',
+        'uses' => 'CommentsController@store'
+        ]);
 });
 // Route::get('list-categories', [
 //     'as' => 'category.index',

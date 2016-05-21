@@ -1,14 +1,6 @@
 #fc_list_articles{
     min-height: 500px;
 }
-#left_content, #right_content{
-    border-right: 1px solid #ccc;
-    display: inline-block;
-    float: left;
-    vertical-align: top;
-}
-#left_content{width: 75%;}
-#right_content{width: 25%;}
 
 #hot_articles{
     height: 500px;
@@ -114,7 +106,7 @@
     width: 100%;
 }
 /*------------DETAIL-----------------*/
-#section_detail{
+.section-detail{
     margin: 30px 0;
     font-size: 1.4em;
 }
@@ -267,6 +259,12 @@
     padding-left: 10px;
     color: #777;
 }
+/*-------------------DISCUSS-----------*/
+.discuss{
+    padding: 10px;
+    font-size: 0.8em;
+}
+
 /*<--------------------------INDEX ARTICLE------------------------------>*/
 .articles{
     display: table;

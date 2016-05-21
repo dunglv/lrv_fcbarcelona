@@ -39,7 +39,7 @@ class ArticlesController extends Controller
                                         ->where('id','!=', $article[0]->id)
                                         ->take(2)
                                         ->get();
-            $comments = Comment::with(['article', 'member'])->orderBy('date_time','DESC')->where('id_article', $id)->get();
+            $comments = Comment::with(['article', 'member'])->orderBy('date_time','ASC')->where('id_article', $id)->get();
             return view('articles.detail')->with(['article'=>$article, 'same_articles'=>$same_articles, 'comments' => $comments]);
         
         }

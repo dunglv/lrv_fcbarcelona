@@ -6,13 +6,13 @@
     @if(count($article) > 0)
       @foreach ($article as $a)
           @section ('title',  $a->title) {{--Get this title for page--}}
-          <div id="section_detail">
+          <div id="article_{{$a->id}}" class="section-detail article-{{$a->id}}">
               <div class="dt-title-article">
                   <h1>{{ $a->title }}</h1>
               </div>
               <div class="dt-categori">
                   In category: <strong><a href="{{ URL::to('category/'.$a->article_category->catename.'.'.$a->article_category->id) }}">{{ $a->article_category->catename }}</a></strong>
-              </div>
+              </div> <!-- end category -->
               <div class="dt-infor-article">
                   <div class="dt-author">
                       <i class="fa fa-user"></i><a href="{{ URL::to('member/'.$a->article_member->username) }}">{{ $a->article_member->username }}</a>
@@ -20,7 +20,7 @@
                   <div class="dt-date-created">
                       <i class="fa fa-calendar"></i>{{ $a->date_created }}
                   </div>
-              </div>
+              </div> <!-- end infor article -->
              <div class="dt-main-content">
                   <div class="dt-description">
                      <div class="dt-text-desc">{{ substr($a->description, 0, 100) }}</div>
@@ -73,8 +73,38 @@
                         </div>
                       @endif
                   </div>
-             </div>
-          </div>
+             </div> <!-- end main content -->
+            <div class="discuss">
+                <div class="form-discuss art_{{$a->id}}">
+                    {!!
+                        Form::open([
+                            'route' => ['comment.store', $a->alias, $a->id],
+                            'method' => 'POST',
+                            'class' => 'form-inline'
+                        ])
+                    !!}
+                    {!! Form::hidden('id_article', $a->id) !!}
+                    {!! Form::hidden('slug', $a->alias) !!}
+                    <div class="form-group">
+                        {!! Form::textarea('content_comment', null, ['class'=>'form-control', 'rows'=>5, 'cols'=>'', 'style' => 'min-width: 300px;', 'placeholder'=>'Leave a comment']) !!}
+                    </div>
+                    <div class="form-group">
+                        @if(count($errors) >0 )
+                            <ul class="error-input">
+                                <li class="tit-err">WHOOPS! Errors Problem</li>
+                                @foreach($errors->all() as $err)
+                                    <li>{{ $err }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        {!! Form::submit('Submit') !!}
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+          </div> <!-- end section detail -->
       @endforeach
     @else
         <div class="alert alert-danger">
@@ -83,3 +113,6 @@
         </div>
     @endif
 @stop
+
+
+

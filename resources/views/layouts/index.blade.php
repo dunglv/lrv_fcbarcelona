@@ -5,7 +5,7 @@
 <section id="fc_news">
     <div class="inner">
         <div class="title-section">
-            <a href="{{ route('articles.index') }}">NEWS</a>
+            <a href="{{ route('article.index') }}">NEWS</a>
         </div>
         <div class="content-section">
             <div class="latest-news">

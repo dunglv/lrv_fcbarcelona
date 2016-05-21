@@ -9,7 +9,7 @@
         <div class="inner">
            <div id="left_content">
                 <div class="title-section">
-                   <a href="{{ route('articles.index') }}">NEWS</a>
+                   <a href="{{ route('article.index') }}">NEWS</a>
                </div>
                <div class="content-section">
                    <div id="hot_articles" class="latest-news">
@@ -146,30 +146,9 @@
                    <div class="loading-more"><a href="">See all post</a></div>
                </div>
            </div> <!-- end left content-->
-           {{--
            <div id="right_content">
-               <div class="hot section-right">
-                   <div class="list-title-section">HOT ARTICLES</div>
-                   <div class="list-section">
-                       <div class="ever-section">
-                           <a href="">Lorem ipsum dolor sit amet.</a>
-                       </div>
-                       <div class="ever-section">
-                           <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-                       </div>
-                       <div class="ever-section">
-                           <a href="">Lorem consectetur adipisicing.</a>
-                       </div>
-                       <div class="ever-section">
-                           <a href="">Lorem ipsum dolor sit amet.</a>
-                       </div>
-                   </div>
-               </div>
-               <div class="ad section-right">
-                   <a href="">{!! HTML::image('images/ads/ads_01.jpg', 'Lorem ipsum dolor.') !!}</a>
-               </div>
-           </div>
-           --}}
+              @include('partials.sidebar')
+           </div> <!-- end right content -->
         </div>
     </section>
 @stop 
