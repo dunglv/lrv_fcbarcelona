@@ -467,6 +467,11 @@ a{
     overflow: hidden;
     position: relative;
 }
+.list-products .fc-item img{
+    -webkit-transition: all ease-in 0.2s;
+    -o-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
+}
 .list-products .fc-item:hover img{
    -ms-transform: scale(1.5,1.5) rotate(5deg);
     -webkit-transform: scale(1.5,1.5) rotate(5deg);
@@ -493,6 +498,9 @@ a{
     font-size: 3em;
     color: #fefefe;
     opacity: 0;
+    -webkit-transition: all ease-in 0.2s;
+    -o-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
 }
 .fc-item .thumnail-product .review a{
     color: #fff;

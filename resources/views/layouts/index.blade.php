@@ -157,7 +157,7 @@
     </div>
 </section>
 <section id="fc_players">
-    <div class="title-section"><a href="#">PLAYERS</a></div>
+    <div class="title-section"><a href="{{ route('team.index') }}">PLAYERS</a></div>
     <div class="inner">
         <div class="fc-list-players">
             <div class="fc-item col-part">
@@ -277,7 +277,7 @@
 </section>
 <section id="fc_shop">
     <div class="title-section">
-        <a href="#">SHOP</a>
+        <a href="{{ route('shop.index') }}">SHOP</a>
     </div>
     <div class="inner">
         <div class="list-products">

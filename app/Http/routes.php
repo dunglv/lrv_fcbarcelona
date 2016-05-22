@@ -40,6 +40,14 @@ Route::group(['middleware' => 'web'], function() {
         'as' => 'comment.store',
         'uses' => 'CommentsController@store'
         ]);
+    Route::get('/team', [
+        'as' => 'team.index',
+        'uses' => 'TeamController@index'
+        ]);
+    Route::get('/shop', [
+        'as' => 'shop.index',
+        'uses' => 'ShopController@index'
+        ]);
 });
 // Route::get('list-categories', [
 //     'as' => 'category.index',
