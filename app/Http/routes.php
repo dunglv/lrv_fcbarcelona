@@ -78,9 +78,9 @@ Route::group(['middleware' => 'web'], function() {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+// Route::group(['middleware' => ['web']], function () {
+//     //
+// });
 
 //========================================================================//
 //+++++++++++++++++++ A D M I N I S T R A T O R S ++++++++++++++++++++++++//
@@ -89,3 +89,12 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/login', 'AdminController@login');
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', 'AdminController@index');
+});

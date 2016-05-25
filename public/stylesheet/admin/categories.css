@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'AvoBold';
+	src: url('../fonts/avo-bold.eot');
+	src: url('../fonts/avo-bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/avo-bold.woff') format('woff'),
+		 url('../fonts/avo-bold.ttf') format('truetype'),
+		 url('../fonts/avo-bold.svg#Avo') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Avo';
+	src: url('../fonts/avo.eot');
+	src: url('../fonts/avo.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/avo.woff') format('woff'),
+		 url('../fonts/avo.ttf') format('truetype'),
+		 url('../fonts/avo.svg#Avo') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+body{
+	font-family: 'Avo', sans-serif;
+}

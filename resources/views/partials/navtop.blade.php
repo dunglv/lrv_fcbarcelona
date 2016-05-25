@@ -5,7 +5,7 @@
           <?php  $active="class='active'"; ?>
            <li><a href="{{ URL::to('/') }}">{!! HTML::image('images/site/fc-icon.png', 'Lorem ipsum dolor sit.') !!}</a></li>
            <li><a <?php if(\Request::route()->getName()=="article.index") echo $active; ?> href="{{ route('article.index') }}">News</a></li>
-           <li><a <?php if(\Request::route()->getName()=="shop.index") echo $active; ?> href="">Shop</a></li>
+           <li><a <?php if(\Request::route()->getName()=="shop.index") echo $active; ?> href="{{route('shop.index')}}">Shop</a></li>
            <li><a href="">Libraries <i class="fa fa-angle-down"></i></a>
                <ul class="bc-dropdown">
                    <li><a href="">Wallpaper</a></li>
@@ -27,6 +27,7 @@
                     {!! Form::close() !!}
                   </div>
                </li>
+               <li><a class="cart-block" href="#"><i class="cart fa fa-shopping-cart"><span id="quan" class="quan">1+</span></i></a></li>
                <li><a href="">Sign in</a></li>
                <li><a href="">Login <i class="fa fa-angle-down"></i></a></li>
            </ul>
