@@ -1,7 +1,7 @@
 @extends('admin.main.master')
 @section('title', 'Add new an articles')
 @section('style')
-	HTML::style('/stylesheet/admin/articles.css')
+	{!! HTML::style('/stylesheet/admin/articles.css') !!}
 @stop
 @section('script', HTML::script('/tool/ckeditor/ckeditor.js'))
 @section('main.content')
