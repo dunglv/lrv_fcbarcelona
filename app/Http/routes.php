@@ -97,4 +97,7 @@ Route::group(['middleware' => 'web'], function () {
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', 'AdminController@index');
+    Route::get('/login', 'AdminController@login');
+    Route::get('/articles', 'ArticlesController@manage');
+    Route::get('/article/create', 'ArticlesController@create');
 });

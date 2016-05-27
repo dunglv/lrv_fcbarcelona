@@ -1,3 +1,6 @@
+@extends('admin.main.master')
+@section('title', 'Home Admin')
+@section('main.content')
 <div class="today-block">
     <div class="tit-block">
         <h2>Today Member</h2>
@@ -183,3 +186,4 @@
         </div>
     </div>
 </div>
+@stop

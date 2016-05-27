@@ -1,0 +1,11 @@
+.a-id{width: 5%;}
+.a-user{width: 10%;}
+.a-name{width: 45%;}
+.a-date-pub{width: 15%;}
+.a-status{width: 5%;}
+.a-hand{width: 20%;}
+.a-hand button{
+	padding: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
+}

@@ -61,5 +61,12 @@ class ArticlesController extends Controller
     //     return view('articles.list_in_cate', compact($list_in_cate, 'list_in_cate'));
     // }
 
+    public function manage(){
+        return view('admin.article.index');
+    }
+
+    public function create(){
+        return view('admin.article.create');
+    }
 
 }

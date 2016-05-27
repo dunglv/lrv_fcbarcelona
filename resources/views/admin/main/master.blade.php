@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Administrator</title>
+    <title>@yield('title', 'Administartor')</title>
     {!! HTML::style('/stylesheet/bootstrap.min.css') !!}
     {!! HTML::style('/stylesheet/font-awesome.min.css') !!}
     {!! HTML::style('/stylesheet/admin/categories.css') !!}
     {!! HTML::style('/stylesheet/admin/index.css') !!}
+    @yield('style')
+    @yield('script')
 </head>
 <body>
     <div class="container nav-top" style="width: 100%;">
@@ -61,14 +63,16 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="right-pannel">
-                    @include('admin.main.home')
+                    @yield('main.content')
                 </div>
             </div>
         </div>
     </section>
+    @if(Route::getCurrentRoute()->getPath()=='admin')
     <section id="shopping_pannel" class="container shopping-pannel">
         @include('admin.main.shopping_home')
     </section>
+    @endif
     <footer>
         Copyright fcbarcelona&copy;2016 - Powerd by <a href="{!! URL::to('http://dung.site40.net') !!}" target="_blank">Dung</a>
     </footer>
