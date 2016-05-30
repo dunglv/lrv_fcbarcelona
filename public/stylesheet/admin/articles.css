@@ -9,3 +9,50 @@
 	margin-left: 2px;
 	margin-right: 2px;
 }
+
+/*---ADMIN----*/
+#_new_a_ad{
+
+}
+#_new_a_ad select{
+	display: block;
+	padding: 5px;
+}
+._expl{
+	font-size: 0.9em;
+    font-style: italic;
+    color: #888;
+    font-family: "Times New Roman", sans-serif;
+}
+#_new_a_ad .add-tag{
+	padding: 2px;
+    border: 1px solid #ddd;
+    display: table;
+    width: 100%;
+}
+
+#_new_a_ad .n-tg{
+	padding: 5px;
+    background: #ddd;
+    margin: 2px;
+    display: block;
+    float: left;
+    position: relative;
+}
+#_new_a_ad .add-tag input{
+	border: 0;
+    outline: none;
+    float: left;
+    margin: 2px;
+    padding: 5px;
+}
+#_new_a_ad .n-tg ._t_close{
+	padding: 2px;
+    background: #A9A9A9;
+    margin-left: 4px;
+}
+#_new_a_ad .n-tg ._t_close:hover{
+	background: #9E3F3F;
+	color: #ddd;
+	cursor: pointer;
+}

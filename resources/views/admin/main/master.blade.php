@@ -78,5 +78,6 @@
     </footer>
     {!! HTML::script('/script/jquery.min.js') !!}
     {!! HTML::script('/script/bootstrap.min.js') !!}
+    {!! HTML::script('/script/admin.js') !!}
 </body>
 </html>

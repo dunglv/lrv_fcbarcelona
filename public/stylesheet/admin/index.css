@@ -182,12 +182,12 @@ input.form-control, .btn{
 .nav-vertical li{
 	list-style: none;
 }
-.nav-vertical li.a-nit a{
+.nav-vertical li.a-nit {
 	background: #CCA83D;
 	color: #6F0404;
 	position: relative;
 }
-.nav-vertical li.a-nit a .a-show{
+.nav-vertical li.a-nit .a-show{
 	position: absolute;
     top: 50%;
     right: 10px;
@@ -197,18 +197,44 @@ input.form-control, .btn{
     transform: translateY(-50%);
     font-weight: bold;
 }
-.nav-vertical li.a-nit a:hover{
+.nav-vertical li.a-nit:hover{
 	background: #BD9828; 
 	-webkit-transition: all ease-in 0.2s;
 	-o-transition: all ease-in 0.2s;
 	transition: all ease-in 0.2s;
 }
-.nav-vertical li.a-nit a:hover .a-show{
+.nav-vertical li.a-nit > a{
+	color: #333;
+}
+.nav-vertical li.a-nit > a:hover, .nav-vertical li.a-nit > a:active, .nav-vertical li.a-nit > a:link{
+	background: #A7BF90;
+	-webkit-transition: all ease-in 0.2s;
+	-o-transition: all ease-in 0.2s;
+	transition: all ease-in 0.2s;
+}
+.nav-vertical li.a-nit:hover .a-show{
 	font-size: 1.2em;
 	text-shadow: 0 1px 1px #000;
 }
 .nav-vertical .sub-menu-ver{
 	padding: 0;
+	background: #ddd;
+}
+.nav-vertical .sub-menu-ver{
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all ease-in 0.2s;
+	-o-transition: all ease-in 0.2s;
+	transition: all ease-in 0.2s;
+}
+.nav-vertical .sub-menu-ver._expand{
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: all ease-in 0.2s;
+	-o-transition: all ease-in 0.2s;
+	transition: all ease-in 0.2s;
 }
 .nav-vertical .sub-menu-ver li{
 	padding: 7px 20px;
