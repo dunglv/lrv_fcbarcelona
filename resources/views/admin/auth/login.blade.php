@@ -1,72 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Login - Administrator</title>
-	<link rel="icon" type="icon" href="{{ URL::to('/images/site/fc-icon.png') }}" >
+    <meta charset="UTF-8">
+    <title>Log In</title>
     {!! HTML::style('/stylesheet/bootstrap.min.css') !!}
     {!! HTML::style('/stylesheet/font-awesome.min.css') !!}
     {!! HTML::style('/stylesheet/admin/categories.css') !!}
     {!! HTML::style('/stylesheet/admin/index.css') !!}
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-				<div class="form-admin">
-					<form action="" method="POST" role="form">
-						<legend class="title-admin">LOGIN SYSTEM ADMINISTRATOR</legend>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-user"></i></span>
-							<input type="text" class="form-control" id="" placeholder="Input your username...">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-							<input type="password" class="form-control" id="" placeholder="Input your password...">
-						</div>
-						<button type="submit" class="btn btn-primary"><i class="fa fa-send"></i> LOGIN</button>
-						<button class="btn btn-danger"><i class="fa fa-mail-forward"></i> VISIT WEBSITE </button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row login">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-offset-1 col-lg-offset-1">
+                <div class="logo-s">
+                    {!! HTML::image('/images/site/fc-icon.png') !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
+                <div class="login-system">
+                    <form action="" method="POST" role="form">
+                        <legend class="tit-logs">LOG IN FCBARCELONA.COM</legend>
+                        <div class="form-group">
+                            <label for="">Your name</label>
+                            <input type="text" class="form-control" id="" placeholder="Input your user name...">
+                        </div>
+                         <div class="form-group">
+                            <label for="">Your password</label>
+                            <input type="password" class="form-control" id="" placeholder="Input your password...">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-<style>
-	html{width: 100%; height: 100%;}
-	.container, .container>div, .container>div>div{height: 100%}
-	body{
-		background: url(../images/site/noucamp.jpg) no-repeat;
-		background-size: 100% 100%;
-		position: relative;
-		height: 100%;
-		width: 100%;
-	}
-	.input-group{
-		margin-bottom: 20px;
-	}
-	.input-group-addon{
-		border-radius: 0;
-	}
-	.form-admin{
-		padding: 30px 10px;
-		background: rgba(0,0,0,0.5);
-		position: absolute;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		-o-transform: translateY(-50%);
-		transform: translateY(-50%);
-	}
-	.title-admin{
-		font-family: "AvoBold", sans-serif;
-		color: #fff;
-	}
-	@media only screen and (max-width: 768px) and (max-height: 500px){
-		
-	}
-	@media only screen and(max-width: 768px){
-		
-	}
-</style>
 </html>
+<style type="text/css">
+    body{
+        background: url('../../images/site/noucamp.jpg') no-repeat;
+    }
+    .login{
+        margin-top: 10%;
+    }
+    .login-system{
+        padding: 15px;
+        background: rgba(0,0,0,0.5);
+        color: #ddd;
+        margin-bottom: 15px;
+    }
+    .logo-s{
+        padding-right: 10px;
+        border-right: 3px solid #ddd;
+    }
+    .logo-s img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .tit-logs{
+        font-family: "AvoBold", sans-serif;
+        font-size: 2em;
+        color: #01bee7;
+    }
+    input[type=text], input[type=password]{
+        padding: 5px;
+        background: transparent;
+        color: #fff;
+        font-family: "AvoBold", sans-serif;
+        letter-spacing: 1px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid #01bee7;
+    }
+    .btn{
+        background: #01bee7;
+        color: #fff;
+        border: 0;
+        padding: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+    }
+    .btn:hover{
+        color: #fff;
+        background: #007c98;
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+    }
+    @media only screen and (min-width: 240px) and (max-width: 991px) {
+        .logo-s{
+            text-align: center;
+            padding-bottom: 15px;
+            border: 0;
+        }
+        .logo-s img{
+            width: 20%;
+        }
+    }
+</style>

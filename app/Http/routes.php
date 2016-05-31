@@ -48,6 +48,7 @@ Route::group(['middleware' => 'web'], function() {
         'as' => 'shop.index',
         'uses' => 'ShopController@index'
         ]);
+   
 });
 // Route::get('list-categories', [
 //     'as' => 'category.index',
@@ -103,6 +104,16 @@ Route::group(['prefix' => 'admin'], function(){
             'as' => 'a.article.create', 
             'uses' => 'ArticlesController@create'
         ]);
+    Route::post('/article/create', [
+        'as' => 'article.store',
+        'uses' => 'ArticlesController@store'
+        ]);
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
 
 Route::group(['middleware' => 'web'], function () {

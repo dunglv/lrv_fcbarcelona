@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Category;
 use App\Article;
@@ -67,6 +67,23 @@ class ArticlesController extends Controller
 
     public function create(){
         return view('admin.article.create');
+    }
+
+    public function store(){
+        $article = new Article();
+        $article->id_cate = 1;
+        $article->id_user = 1;
+        $article->title = Input::get('title');
+        $article->alias = Input::get('title').'-alias';
+        $article->description = Input::get('title').'-description';
+        $article->content = Input::get('content');
+        $article->date_created = date('Y-m-d H:i:s');
+        $article->date_updated = date('Y-m-d H:i:s');
+        $article->tags = 'tags tags tags'; //Input::get('tags');
+        $article->views = 0;
+        $article->status = 0;
+        $article->save();
+        return redirect('/admin/articles');
     }
 
 }

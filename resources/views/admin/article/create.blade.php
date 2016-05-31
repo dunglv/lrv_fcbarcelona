@@ -6,16 +6,23 @@
 @section('script', HTML::script('/tool/ckeditor/ckeditor.js'))
 @section('main.content')
 	<div id="_new_a_ad" class="create-art-new">
-		<form action="" method="POST" role="form">
+		{!! 
+			Form::open([
+				'method' => 'POST',
+				'route' => ['article.store'],
+				'role' => 'form'
+			]) 
+		!!}
+			{{ csrf_field() }}
 			<legend>Create an new article</legend>
 		
 			<div class="form-group">
 				<label for="">Title</label>
-				<input type="text" class="form-control" id="" placeholder="Input field">
+				<input type="text" class="form-control" id="" name="title" placeholder="Input field">
 			</div>
 			<div class="form-group">
 				<label for="">Category</label>
-				<select name="in_category" id="in_category">
+				<select name="category" id="in_category">
 					<option value="0">Lorem ipsum dolor.</option>
 					<option value="0">Consectetur adipisicing elit</option>
 					<option value="0">Lorem ipsum dolor.</option>
@@ -24,13 +31,13 @@
 			</div>
 			<div class="form-group">
 				<label for="">Content</label>
-				<textarea name="editor_1" id="editor_1" cols="30" rows="10"></textarea>
+				<textarea name="content" id="editor_1" cols="30" rows="10"></textarea>
 			</div>
 			<div class="form-group">
 				<p>
 					<label for="add_tags">Tags</label>
 				</p>
-				<div class="add-tag">
+				<div class="add-tag" name="tags">
 					<div class="add-wrap-tag">
 						
 					</div>
@@ -48,7 +55,7 @@
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Create</button>
-		</form>
+		{!! Form::close() !!}
 	</div>
 	<script>
 		 CKEDITOR.replace( 'editor_1' );
