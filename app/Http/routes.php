@@ -99,5 +99,14 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/', 'AdminController@index');
     Route::get('/login', 'AdminController@login');
     Route::get('/articles', 'ArticlesController@manage');
-    Route::get('/article/create', 'ArticlesController@create');
+    Route::get('/article/create', [
+            'as' => 'a.article.create', 
+            'uses' => 'ArticlesController@create'
+        ]);
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

@@ -183,9 +183,9 @@ input.form-control, .btn{
 	list-style: none;
 }
 .nav-vertical li.a-nit {
-	background: #CCA83D;
 	color: #6F0404;
 	position: relative;
+	border-bottom: 1px solid #ddd;
 }
 .nav-vertical li.a-nit .a-show{
 	position: absolute;
@@ -198,16 +198,16 @@ input.form-control, .btn{
     font-weight: bold;
 }
 .nav-vertical li.a-nit:hover{
-	background: #BD9828; 
 	-webkit-transition: all ease-in 0.2s;
 	-o-transition: all ease-in 0.2s;
 	transition: all ease-in 0.2s;
 }
 .nav-vertical li.a-nit > a{
-	color: #333;
+	color: #FFF;
 }
-.nav-vertical li.a-nit > a:hover, .nav-vertical li.a-nit > a:active, .nav-vertical li.a-nit > a:link{
-	background: #A7BF90;
+.nav-vertical li.a-nit > a:hover, .nav-vertical li.a-nit > a:focus, .nav-vertical li.a-nit > a:active, .nav-vertical li.a-nit > a:link{
+	background: #115D5D;
+	color: #fff;
 	-webkit-transition: all ease-in 0.2s;
 	-o-transition: all ease-in 0.2s;
 	transition: all ease-in 0.2s;
@@ -222,16 +222,19 @@ input.form-control, .btn{
 }
 .nav-vertical .sub-menu-ver{
 	height: 0;
-	opacity: 0;
-	visibility: hidden;
+	position: relative;
+	top: 0;
+	/*opacity: 0;*/
+	/*visibility: hidden;*/
 	-webkit-transition: all ease-in 0.2s;
 	-o-transition: all ease-in 0.2s;
 	transition: all ease-in 0.2s;
+	overflow: hidden;
 }
 .nav-vertical .sub-menu-ver._expand{
 	height: auto;
-	opacity: 1;
-	visibility: visible;
+	/*opacity: 1;*/
+	/*visibility: visible;*/
 	-webkit-transition: all ease-in 0.2s;
 	-o-transition: all ease-in 0.2s;
 	transition: all ease-in 0.2s;

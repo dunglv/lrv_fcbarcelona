@@ -1,5 +1,7 @@
 $(function(){
 	var $init = $('.a-nit>a');
+	var cclick = 0;
+
 	$init.on('click', function(event){
 		var $in_init = $(this).parent().find('.sub-menu-ver');
 		// alert($in_init);

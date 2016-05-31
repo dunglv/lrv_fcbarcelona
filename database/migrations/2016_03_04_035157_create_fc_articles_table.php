@@ -24,6 +24,7 @@ class CreateFcArticlesTable extends Migration
             $table->datetime('date_updated');
             $table->string('tags', 500);
             $table->integer('views')->default(0);
+            $table->integer('lock_cmt')->default(0);
             $table->integer('status')->default(0);
             $table->timestamps();
         });

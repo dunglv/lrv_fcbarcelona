@@ -40,6 +40,13 @@
 					**Enter tag and press comma char to enter other tags.
 				</div>
 			</div>
+			<div class="form-group allow-comment">
+				<label for="cmt_chk_off"> comment of this article</label>
+				<div class="lock-cmt">
+					<input type="checkbox" name="lock_comment" value="1" id="cmt_chk_off" class="chk_off">
+					<label for="cmt_chk_off">Disable</label>
+				</div>
+			</div>
 			<button type="submit" class="btn btn-primary">Create</button>
 		</form>
 	</div>

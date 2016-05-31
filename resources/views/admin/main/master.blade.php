@@ -23,14 +23,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">{!! HTML::image('/images/site/fc-icon.png') !!}</a>
+                        <a class="navbar-brand" href="{{ url('/admin') }}">{!! HTML::image('/images/site/fc-icon.png') !!}</a>
                     </div>
             
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#"> <i class="fa fa-globe"></i> Visit Website</a></li>
-                            <li><a href="#"><i class="fa fa-plus-circle"></i> New Article</a></li>
+                            <li class="active"><a href="{{ url('/') }}"> <i class="fa fa-globe"></i> Visit Website</a></li>
+                            <li><a href="{{ route('a.article.create') }}"><i class="fa fa-plus-circle"></i> New Article</a></li>
                             <li><a href="#"><i class="fa fa-building"></i> New Categories</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
