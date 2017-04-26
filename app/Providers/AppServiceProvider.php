@@ -3,8 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Match;
-use DB;
+use Illuminate\Support\Facades\Schema;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->matchesComposer();
+         Schema::defaultStringLength(191);
+         $this->matchesComposer();
     }
 
     /**

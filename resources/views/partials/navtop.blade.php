@@ -28,8 +28,12 @@
                   </div>
                </li>
                <li><a class="cart-block" href="#"><i class="cart fa fa-shopping-cart"><span id="quan" class="quan">1+</span></i></a></li>
-               <li><a href="">Sign in</a></li>
-               <li><a href="">Login <i class="fa fa-angle-down"></i></a></li>
+               @if(\Auth::check())
+               <li><a href="{{route('user.logout')}}">Logout</a></li>
+               @else
+               <li><a href="{{url('/register')}}">Sign in</a></li>
+               <li><a href="{{url('/login')}}">Login <i class="fa fa-angle-down"></i></a></li>
+               @endif
            </ul>
        </div>
    </div>

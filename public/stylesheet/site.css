@@ -299,6 +299,14 @@ a{
     overflow: hidden;
     position: relative;
 }
+#fc_slider .overlay-timmer{
+    position: absolute;
+    bottom: 0;
+    background: rgba(1, 190, 199, 0.5);
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
 #fc_slider .slide img{
     min-height: 500px;
     width: 100%;
@@ -337,7 +345,7 @@ a{
 }
 .fc-slides .pager{
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
 }
 .fc-slides .pager ul{

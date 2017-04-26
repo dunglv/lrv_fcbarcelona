@@ -7,6 +7,9 @@
     <link rel="icon" type="icon" href="{{ URL::to('images/site/fc-icon.png') }}">
     {!! HTML::style('stylesheet/site.css') !!}
     {!! HTML::style('stylesheet/font-awesome.min.css') !!}
+    {!! HTML::style('semantic/semantic.min.css') !!}
+    {!! HTML::script('script/jquery.min.js') !!}
+    
     @yield('style')
 </head>
 <body>

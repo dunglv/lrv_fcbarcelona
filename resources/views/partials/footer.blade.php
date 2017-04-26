@@ -14,7 +14,7 @@
         </div>
     </div>
 </footer>
-    {!! HTML::script('script/jquery.min.js') !!}
+    {!! HTML::script('semantic/semantic.min.js') !!}
     {!! HTML::script('script/site.js') !!}
     @yield('script')
 </body>

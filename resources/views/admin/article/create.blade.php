@@ -1,15 +1,15 @@
-@extends('admin.main.master')
+@extends('admin.index')
 @section('title', 'Add new an articles')
 @section('style')
 	{!! HTML::style('/stylesheet/admin/articles.css') !!}
 @stop
 @section('script', HTML::script('/tool/ckeditor/ckeditor.js'))
-@section('main.content')
+@section('admin.content')
 	<div id="_new_a_ad" class="create-art-new">
 		{!! 
 			Form::open([
 				'method' => 'POST',
-				'route' => ['article.store'],
+				'route' => ['admin.article.store'],
 				'role' => 'form'
 			]) 
 		!!}

@@ -7,7 +7,7 @@ $(function(){
     var numSlide = $slide.length;
     var widthSlides = numSlide * widthSlide;
     var current = 0;
-
+    var timmer = $('.overlay-timmer');
     $slide.css({'width':widthSlide});
     $slides.css({'width': widthSlides});
     var li ='';
@@ -32,7 +32,8 @@ $(function(){
             $slides.stop(1000).animate({'margin-left':'+='+(indexOfActive-indexThis)*widthSlide}, 1000);
         }
     });
-
+    var duration = 5000;
+    var timeDt = duration;
     var interval = setInterval(function(){
         current++;
         var $pagerActiveInterval = $pagination.find('li.active');
@@ -47,7 +48,8 @@ $(function(){
             $slides.stop(1000).animate({'margin-left':'0'}, 1000);
 
         }
-    }, 5000);
+        
+    }, duration);
 
 
 
